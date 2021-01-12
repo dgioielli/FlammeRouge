@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Fonts/SHOWG.TTF" type="DynamicFontData" id=1]
 
@@ -6,32 +6,7 @@
 size = 50
 font_data = ExtResource( 1 )
 
-[sub_resource type="GDScript" id=2]
-script/source = "extends Panel
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_OpBox_gui_input(event):
-	if (event is InputEventMouseButton && event.pressed && event.button_index == 1):
-		print(\"Clicked\")
-		modulate = Color(255, 0, 0)
-"
-
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 35
 font_data = ExtResource( 1 )
 
@@ -44,14 +19,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MenuInicial" type="Control" parent="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Control/MenuInicial"]
+[node name="Label" type="Label" parent="Control"]
 modulate = Color( 1, 0.584314, 0.403922, 1 )
 anchor_right = 1.0
 margin_bottom = 150.0
@@ -59,23 +27,116 @@ custom_fonts/font = SubResource( 1 )
 text = "Flamme Rouge"
 align = 1
 valign = 1
-
-[node name="OpBox" type="Panel" parent="Control/MenuInicial"]
-anchor_right = 1.0
-margin_left = 200.0
-margin_top = 200.0
-margin_right = -200.0
-margin_bottom = 280.0
-script = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Control/MenuInicial/OpBox"]
+[node name="MenuInicial" type="Control" parent="Control"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnJogoRapido" type="Button" parent="Control/MenuInicial"]
+anchor_right = 1.0
+margin_left = 200.0
+margin_top = 130.0
+margin_right = -200.0
+margin_bottom = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/MenuInicial/BtnJogoRapido"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
 text = "Jogo Rápido"
 align = 1
 valign = 1
-[connection signal="gui_input" from="Control/MenuInicial/OpBox" to="Control/MenuInicial/OpBox" method="_on_OpBox_gui_input"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnNovoJogo" type="Button" parent="Control/MenuInicial"]
+anchor_right = 1.0
+margin_left = 200.0
+margin_top = 230.0
+margin_right = -200.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/MenuInicial/BtnNovoJogo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Novo Jogo	"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnOpcoes" type="Button" parent="Control/MenuInicial"]
+anchor_right = 1.0
+margin_left = 200.0
+margin_top = 330.0
+margin_right = -200.0
+margin_bottom = 400.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/MenuInicial/BtnOpcoes"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Opções"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnResultados" type="Button" parent="Control/MenuInicial"]
+anchor_right = 1.0
+margin_left = 200.0
+margin_top = 430.0
+margin_right = -200.0
+margin_bottom = 500.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/MenuInicial/BtnResultados"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Resultados"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuNovaPartida" type="Control" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuOpcoes" type="Control" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuResultados" type="Control" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
